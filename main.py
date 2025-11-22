@@ -1,6 +1,4 @@
-def main():
-    print("Hello from playscraper-api!")
-
+from src.scraper.main import main
 
 if __name__ == "__main__":
     main()

@@ -14,3 +14,6 @@ URLS_APPS = [
     "https://play.google.com/store/apps/details?id=com.ubercab",  # Uber
     "https://play.google.com/store/apps/details?id=com.grability.rappi",  # Rappi
 ]
+
+NUM_REVIEWS = 50
+EMBEDDING_MODEL = "Alibaba-NLP/gte-Qwen2-1.5B-instruct"
