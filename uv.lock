@@ -1999,6 +1999,7 @@ dependencies = [
     { name = "kaleido" },
     { name = "nbformat" },
     { name = "openai" },
+    { name = "torch" },
 ]
 
 [package.metadata]
@@ -2012,6 +2013,7 @@ requires-dist = [
     { name = "kaleido", specifier = ">=1.2.0" },
     { name = "nbformat", specifier = ">=5.10.4" },
     { name = "openai", specifier = ">=2.8.1" },
+    { name = "torch", specifier = ">=2.9.1" },
 ]
 
 [[package]]

@@ -12,6 +12,7 @@ from bertopic import BERTopic
 from bertopic.representation import KeyBERTInspired, MaximalMarginalRelevance, OpenAI as BERTopicOpenAI
 from dotenv import load_dotenv
 import openai
+import torch
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -54,7 +55,17 @@ class TopicModelingPipeline:
     def train_embedding_model(self):
         """Initializes and trains the sentence transformer model."""
         logging.info("Training embedding model...")
-        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL)
+        
+        # Detectar automáticamente el mejor dispositivo disponible
+        if torch.cuda.is_available():
+            device = "cuda"  # GPU NVIDIA
+        elif torch.backends.mps.is_available():
+            device = "mps"   # GPU Apple Silicon
+        else:
+            device = "cpu"   # CPU
+        
+        logging.info(f"Using device: {device}")
+        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL, device=device)
         logging.info("Embedding model trained.")
 
     def create_embeddings(self):

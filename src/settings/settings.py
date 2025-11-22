@@ -16,7 +16,7 @@ URLS_APPS = [
     "https://play.google.com/store/apps/details?id=com.grability.rappi",  # Rappi
 ]
 
-NUM_REVIEWS = 10_0000
+NUM_REVIEWS = 1_000
 EMBEDDING_MODEL = "Alibaba-NLP/gte-Qwen2-1.5B-instruct"
 
 # --- Constants and Configuration ---
@@ -26,5 +26,5 @@ IMAGES_DIR = "images"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 UMAP_COMPONENTS_VIZ = 2
 UMAP_COMPONENTS_CLUSTER = 5
-HDBSCAN_MIN_CLUSTER_SIZE = 5
+HDBSCAN_MIN_CLUSTER_SIZE = 50
 RANDOM_STATE = 42
